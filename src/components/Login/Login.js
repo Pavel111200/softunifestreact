@@ -31,6 +31,7 @@ const Login = () => {
             loginClient({ email, password})
                 .then(result=> {
                     userLogin(result);
+                    navigate('/clientHomePage');
                 });
         }
 

@@ -8,6 +8,7 @@ import { registerCompany, registerClient } from '../../services/userService';
 
 const Register = () => {
     const navigate = useNavigate();
+   
     const { userLogin } = useUserContext();
     const [registrationType, setRegistrationType] = useState('company');
     const onSubmit = (e) => {
@@ -35,6 +36,7 @@ const Register = () => {
             registerClient({ email, password, firstName, lastName })
                 .then(result=> {
                     userLogin(result);
+                    navigate('/clientHomePage');
                 });
         }
     }

@@ -4,7 +4,8 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import { UserProvider } from './contexts/UserContext';
 import { Routes, Route } from 'react-router-dom';
-
+import ClientHomePage from'./components/Client/ClientHomePage';
+import ClientProductPage from './components/Client/ClientProductPage';
 
 function App() {
   return (
@@ -15,6 +16,10 @@ function App() {
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/company' element={<Company/>}/>
+          <Route path='/clientHomePage' element={<ClientHomePage/>}/>
+          <Route path='/clientHomePage/products/:name' element={<ClientProductPage/>}/>
+          
+          
         </Routes>
       </UserProvider>
       
