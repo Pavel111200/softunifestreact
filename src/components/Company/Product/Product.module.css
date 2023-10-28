@@ -1,0 +1,9 @@
+
+.tableButton{
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: lightgreen;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}

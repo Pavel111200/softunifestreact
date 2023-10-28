@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import styles from './Register.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useUserContext } from '../../contexts/UserContext';
 import { registerCompany, registerClient } from '../../services/userService';
 
 
 
 const Register = () => {
+    const navigate = useNavigate();
     const { userLogin } = useUserContext();
     const [registrationType, setRegistrationType] = useState('company');
     const onSubmit = (e) => {
@@ -21,6 +22,7 @@ const Register = () => {
             registerCompany({ email, password, name })
                 .then(result=> {
                     userLogin(result);
+                    navigate('/company');
                 });
         }else if(registrationType === 'client'){
             const {

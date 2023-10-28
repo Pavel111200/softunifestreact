@@ -1,10 +1,11 @@
 import styles from './Login.module.css';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { loginClient, loginCompany } from '../../services/userService'
 import { useUserContext } from '../../contexts/UserContext';
 
 const Login = () => {
+    const navigate = useNavigate();
     const { userLogin } = useUserContext();
     const [registrationType, setRegistrationType] = useState('company');
     const onSubmit = (e) => {
@@ -19,6 +20,7 @@ const Login = () => {
             loginCompany({ email, password})
                 .then(result=> {
                     userLogin(result);
+                    navigate('/company');
                 });
         }else if(registrationType === 'client'){
             const {
