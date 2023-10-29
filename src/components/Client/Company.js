@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Company = ({company}) => {
     return (
         <tr>
-                    <th>{company.id}</th>
+                    
                     <th>{company.name}</th>
                     <th>{company.email}</th>
                     <th>
