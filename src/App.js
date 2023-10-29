@@ -7,6 +7,8 @@ import { Routes, Route } from 'react-router-dom';
 import ClientHomePage from'./components/Client/ClientHomePage';
 import ClientProductPage from './components/Client/ClientProductPage';
 import EthPayment from'./components/Client/EthPayment'
+import CreateProduct from './components/CreateProduct/CreateProduct';
+
 function App() {
   return (
     <div>
@@ -19,6 +21,8 @@ function App() {
           <Route path='/clientHomePage' element={<ClientHomePage/>}/>
           <Route path='/clientHomePage/products/:name' element={<ClientProductPage/>}/>
           <Route path='/clientHomePage/products/SoftUni/EthPayment/:comname'element={<EthPayment/>}/>
+          <Route path='/clientHomePage/products/SoftUni/EthPayment'element={<EthPayment/>}/>
+          <Route path='/company/:companyId/products/add' element={<CreateProduct/>}/>
           
           
         </Routes>

@@ -1,4 +1,4 @@
-const baseUrl = 'https://localhost:44366/api';
+const baseUrl = 'https://localhost:7202/api';
 
 export const loginCompany = (data) => {
    return fetch(`${baseUrl}/Companies/login` , {
