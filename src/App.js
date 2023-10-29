@@ -8,6 +8,7 @@ import ClientHomePage from'./components/Client/ClientHomePage';
 import ClientProductPage from './components/Client/ClientProductPage';
 import EthPayment from'./components/Client/EthPayment'
 import CreateProduct from './components/CreateProduct/CreateProduct';
+import EditProduct from './components/EditProduct/EditProduct';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
           <Route path='/clientHomePage/products/:name' element={<ClientProductPage/>}/>
           <Route path='/clientHomePage/products/SoftUni/EthPayment'element={<EthPayment/>}/>
           <Route path='/company/:companyId/products/add' element={<CreateProduct/>}/>
-          
+          <Route path='/company/:companyId/products/:productId' element={<EditProduct/>}/>
           
         </Routes>
       </UserProvider>

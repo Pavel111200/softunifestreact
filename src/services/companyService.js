@@ -38,3 +38,29 @@ export const addProduct = async (data, companyId , accessToken) => {
 
     return await response;
 }
+
+export const getProduct = async (productId , accessToken) => {
+    const response = await fetch(`${baseUrl}/${productId}`, {
+        method: 'GET',
+        headers:{
+            'Authorization': `bearer ${accessToken}`
+        },
+    }
+    );
+
+    return await response.json();
+}
+
+export const editProduct = async (data, productId , accessToken) => {
+    const response = await fetch(`${baseUrl}/${productId}`, {
+        method: 'PUT',
+        headers:{
+            'Content-type': 'application/json',
+            'Authorization': `bearer ${accessToken}`
+        },
+        body: JSON.stringify(data)
+    }
+    );
+
+    return await response.json();
+}

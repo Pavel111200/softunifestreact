@@ -35,7 +35,7 @@ const Company = () => {
                 </tr>
             </thead>
             <tbody>
-                {products == null || products.length === 0 ? <h1>No Products</h1> : products.map(p=><Product product={p}  key={p.id}/>)}               
+                {products == null || products.length === 0 ? <h1>No Products</h1> : products.map(p=><Product product={p} companyId={user.id}  key={p.id}/>)}               
             </tbody>
         </table>
         </div>

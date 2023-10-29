@@ -35,7 +35,11 @@ const CreateProduct = () => {
                 <label htmlFor="name" className={styles.label}>
                     Name:
                 </label>
-                <input type="text" name="name" className={styles.input} />                              
+                <input type="text" name="name" className={styles.input} />    
+                <label htmlFor="price" className={styles.label}>
+                    Price:
+                </label>
+                <input type="text" name="price" className={styles.input} />                            
                 <label htmlFor="description" className={styles.label}>
                     Description:
                 </label>
@@ -45,10 +49,6 @@ const CreateProduct = () => {
                     rows={10}
                     className={styles.input}
                 />
-                <label htmlFor="price" className={styles.label}>
-                    Price:
-                </label>
-                <input type="text" name="price" className={styles.input} />  
             </div>
             <button type="submit" className={styles.btn}>
                 Add
