@@ -5,10 +5,9 @@ import {payWithCrypto}from '../../services/clientService'
 import { useUserContext } from '../../contexts/UserContext';
 export default function EthPayment(){
     const companyAccount="0xcE354f708B7FC1232017fA73F07d7B4d5F0eFA6b";
-    const {comname}=useParams();
+    const {companyName}=useParams();
     const {user} = useUserContext();
-    console.log(comname);
-    const res=comname.split(' ');
+    const res=companyName.split(' ');
     console.log(res[1]);
 
     const navigate=useNavigate();
@@ -23,7 +22,7 @@ export default function EthPayment(){
     payWithCrypto(clientPrivateKey,res[1],companyAccount,clientAccount,res[0],user.firsName)
     .then((res)=>{
         console.log(res);
-        navigate('/clientHomePage/products/SoftUni');
+        navigate(`/clientHomePage/products/${companyName}`);
     })
     }
 return (<>
@@ -47,7 +46,7 @@ return (<>
                     <i className={styles.icon + " fa-solid fa-user icon"}></i>
                 </div>
                  <button type="submit" className={styles.formBtn}>Register</button>
-                <Link to="/clientHomePage/products/SoftUni" className={styles.link}>Back to list!</Link>
+                <Link to={`/clientHomePage/products/${companyName}`} className={styles.link}>Back to list!</Link>
             </form>
         </div>
 </>)

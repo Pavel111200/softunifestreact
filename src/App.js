@@ -9,6 +9,8 @@ import ClientProductPage from './components/Client/ClientProductPage';
 import EthPayment from'./components/Client/EthPayment'
 import CreateProduct from './components/CreateProduct/CreateProduct';
 import EditProduct from './components/EditProduct/EditProduct';
+import CompanyRoute from './components/CompanyRoute';
+import ClientRoute from './components/ClientRoute';
 
 function App() {
   return (
@@ -18,13 +20,19 @@ function App() {
           <Route path='' element={<Register/>}/>
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
-          <Route path='/company' element={<Company/>}/>
+
+          <Route element={<CompanyRoute/>} >
+            <Route path='/company' element={<Company/>}/>
+            <Route path='/company/:companyId/products/add' element={<CreateProduct/>}/>
+            <Route path='/company/:companyId/products/:productId' element={<EditProduct/>}/>
+          </Route>
+
+          <Route element={<ClientRoute/>}>
           <Route path='/clientHomePage' element={<ClientHomePage/>}/>
           <Route path='/clientHomePage/products/:name' element={<ClientProductPage/>}/>
-          <Route path='/clientHomePage/products/SoftUni/EthPayment/:comname'element={<EthPayment/>}/>
-          <Route path='/clientHomePage/products/SoftUni/EthPayment'element={<EthPayment/>}/>
-          <Route path='/company/:companyId/products/add' element={<CreateProduct/>}/>
-          <Route path='/company/:companyId/products/:productId' element={<EditProduct/>}/>
+          <Route path='/clientHomePage/products/:companyName/EthPayment/:comname'element={<EthPayment/>}/>
+          <Route path='/clientHomePage/products/:companyName/EthPayment'element={<EthPayment/>}/>
+          </Route>
           
         </Routes>
       </UserProvider>

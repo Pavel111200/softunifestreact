@@ -2,7 +2,7 @@ import styles from '../Company/Product/Product.module.css';
 import { Link } from 'react-router-dom';
 import StripeCheckout from 'react-stripe-checkout';
 
-const Product = ({product}) => {
+const Product = ({product, companyName}) => {
     const onToken = (token) =>{
         console.log(token);
     };
@@ -14,7 +14,7 @@ const Product = ({product}) => {
                     <th>{product.price}</th>
                     <th>
                     <StripeCheckout name="Pay with Stripe" token={onToken} stripeKey="pk_test_51O5qWTBAsyNuGIwOUfywMCvhsMCEnB0JOQh3MSkQQJTPUCymmhPekZaUkJVzRC3BOzGbMm35TtY4k8UKBDMPIjS500D4zBrSGG"/>
-                        <Link to={`/clientHomePage/products/SoftUni/EthPayment/${product.name} ${product.price}`} className={styles.tableButton}>PayETH</Link>
+                        <Link to={`/clientHomePage/products/${companyName}/EthPayment/${product.name} ${product.price}`} className={styles.tableButton}>PayETH</Link>
                     </th>
         </tr>
     );
