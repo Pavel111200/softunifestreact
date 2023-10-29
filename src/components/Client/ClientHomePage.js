@@ -11,8 +11,19 @@ export default function ClientHomePage(){
         const {
             str,
         } = Object.fromEntries(new FormData(e.target));
-        var result=getCompanyByStr(str,user.accessToken)
-        setCompanies(result);
+        console.log(str);
+        getCompanyByStr(str,user.accessToken).then((res)=>{
+            console.log(res);
+            setCompanies(res);
+        })
+        
+    }
+    const onClick=()=>{
+        getAllCompanies(user.accessToken)
+            .then(res=>{
+                console.log(res)
+                setCompanies(res)
+            });
     }
     useEffect(()=>{
         try {
@@ -29,13 +40,11 @@ export default function ClientHomePage(){
     return(<>
     <div className={styles.topnav}>
         <form onSubmit={onSubmit}>
-        <input type="text" placeholder="Search.."/>
+        <input type="text"name="str" placeholder="Search.."/>
         </form>
       
-        
-        
- 
-  
+       <button type="button"  onClick={onClick}>GetAll</button>
+         
 </div>
         <div className={styles.tableWrapper}>
             
