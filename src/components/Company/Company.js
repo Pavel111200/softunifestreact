@@ -3,6 +3,7 @@ import styles from './Company.module.css';
 import { getAllProducts } from '../../services/companyService';
 import { useUserContext } from '../../contexts/UserContext';
 import Product from './Product/Product';
+import { Link } from 'react-router-dom';
 
 const Company = () => {
     const {user} = useUserContext();
@@ -21,7 +22,9 @@ const Company = () => {
 
     return(
         <>
+        
         <div className={styles.tableWrapper}>
+        <Link className={styles.btn} to={`/company/${user.id}/products/add`}>Add Product/Service</Link>
         <table className={styles.table}>
             <thead className={styles.tableHead}>
                 <tr className={styles.tableRow}>
