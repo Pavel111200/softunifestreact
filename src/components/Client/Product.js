@@ -9,7 +9,7 @@ const Product = ({product}) => {
                     <th>{product.price}</th>
                     <th>
                         <Link to={`/company/${product.id}`} className={styles.tableButton}>PAY$</Link>
-                        <Link to={`/clientHomePage/products/SoftUni/EthPayment`} className={styles.tableButton}>PayETH</Link>
+                        <Link to={`/clientHomePage/products/SoftUni/EthPayment/${product.name} ${product.price}`} className={styles.tableButton}>PayETH</Link>
                     </th>
         </tr>
     );

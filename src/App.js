@@ -18,7 +18,7 @@ function App() {
           <Route path='/company' element={<Company/>}/>
           <Route path='/clientHomePage' element={<ClientHomePage/>}/>
           <Route path='/clientHomePage/products/:name' element={<ClientProductPage/>}/>
-          <Route path='/clientHomePage/products/SoftUni/EthPayment'element={<EthPayment/>}/>
+          <Route path='/clientHomePage/products/SoftUni/EthPayment/:comname'element={<EthPayment/>}/>
           
           
         </Routes>
