@@ -23,7 +23,7 @@ export const getCompanyByStr = async (str,accessToken) => {
 
     return await response.json();
 }
-export const payWithCrypto = async (privateKey,amount,clientAccount,companyAccount) => {
+export const payWithCrypto = async (privateKey,amount,clientAccount,companyAccount,productName,clientName) => {
     const response = await fetch(`${baseUrl}Clients/payWithCripto`, {
         method: 'POST',
         headers:{
@@ -34,7 +34,9 @@ export const payWithCrypto = async (privateKey,amount,clientAccount,companyAccou
             clientPrivateKey: privateKey,
             amount: amount,
             companyAccount: clientAccount,
-            clientAccount: companyAccount
+            clientAccount: companyAccount,
+            clientName:clientName,
+            productName:productName,
           }),
     }
     );
