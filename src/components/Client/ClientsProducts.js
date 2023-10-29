@@ -15,7 +15,7 @@ return(<>
     <table className={styles.table}>
         <thead className={styles.tableHead}>
             <tr className={styles.tableRow}>
-                <th>Id</th>
+               
                 <th>Name</th>
                 <th>Description</th>
                 <th>Buy</th>
